@@ -12,6 +12,11 @@ public class NRPS extends JFrame implements ActionListener {
     private JButton spockButton;
     private JLabel resultLabel;
 
+    
+
+
+
+
     static Color GBGC;
 
     NRPS(){
@@ -19,8 +24,6 @@ public class NRPS extends JFrame implements ActionListener {
         this.setFocusable(true);
         Game();
     }
-
-
 
 
 
@@ -78,7 +81,7 @@ public class NRPS extends JFrame implements ActionListener {
         // Create the result label
         resultLabel = new JLabel();
 
-        // Add the buttons and result label to the content pane
+       // Add the buttons and result label to the content pane
         Container c = getContentPane();
         c.setLayout(new FlowLayout());
         c.setSize(250, 1500);
@@ -142,28 +145,10 @@ public class NRPS extends JFrame implements ActionListener {
         // update result label
         resultLabel.setText("You chose " + playerChoice + ". Computer chose " + computerChoice + ". " + result);
         
-        
-
-}   public void GameOver(){
-
     
 
-
+}
 
 }
 
-
-
-
-
-
-        public static void main (String[]args){
-
-            new NRPS();
-      
-            
-        
-    } 
-   
-}
 
