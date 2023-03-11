@@ -3,6 +3,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.xml.stream.events.StartDocument;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.xml.stream.events.StartDocument;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.beans.EventHandler;
@@ -79,6 +84,9 @@ public class Difficulty extends JFrame{
 
         public void actionPerformed(ActionEvent event){
 
+            new ERPS();
+            dispose();
+
             
         }
     }private class EventHandler1 implements ActionListener{
@@ -98,6 +106,10 @@ public class Difficulty extends JFrame{
 
         public void actionPerformed(ActionEvent event){
 
+            new HRPS();
+
+            dispose();
+
             
 
         }
@@ -105,6 +117,7 @@ public class Difficulty extends JFrame{
     }
 
 }
+
 
 
 
