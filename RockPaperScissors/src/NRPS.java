@@ -12,7 +12,19 @@ public class NRPS extends JFrame implements ActionListener {
     private JButton spockButton;
     private JLabel resultLabel;
 
-    public NRPS() {
+    static Color GBGC;
+
+    NRPS(){
+        this.setBackground(GBGC);
+        this.setFocusable(true);
+        Game();
+    }
+
+
+
+
+
+    public void Game() {
         // Create the buttons and add an action listener to each as well as adding fonts and designs(feel free to reconfigure just remember to tell before you commit)
         rockButton = new JButton("rock");
         rockButton.addActionListener(this);
@@ -121,19 +133,37 @@ public class NRPS extends JFrame implements ActionListener {
             result = "You win!";
         } else {
             result = "Computer wins!";
+
+
+
         }
         
         
         // update result label
         resultLabel.setText("You chose " + playerChoice + ". Computer chose " + computerChoice + ". " + result);
         
-    
-}
-    public static void main(String[] args) {
-        new NRPS() {
-            
-        };
-    }
+        
 
+}   public void GameOver(){
+
+    
+
+
+
+}
+
+
+
+
+
+
+        public static void main (String[]args){
+
+            new NRPS();
+      
+            
+        
+    } 
    
 }
+
