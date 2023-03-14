@@ -51,8 +51,10 @@ class ColorMenu extends JFrame{
         public void valueChanged(ListSelectionEvent event){
 
             ERPS.GBGC = colorListArray[colorList.getSelectedIndex()];
+            HRPS.GBGC = colorListArray[colorList.getSelectedIndex()];
+            NRPS.GBGC = colorListArray[colorList.getSelectedIndex()];
 
-            new ERPS();
+            new Difficulty();
             dispose();
         }
     }
