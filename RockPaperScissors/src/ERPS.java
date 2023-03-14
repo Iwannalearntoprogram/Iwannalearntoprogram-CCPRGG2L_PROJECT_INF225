@@ -118,6 +118,9 @@ class ERPS extends JFrame implements ActionListener {
         } else {
             result = "Computer wins!";
 
+            dispose();
+            new TryAgain();
+
 
 
         }
