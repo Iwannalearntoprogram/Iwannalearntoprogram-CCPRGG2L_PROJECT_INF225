@@ -4,22 +4,22 @@ import java.awt.event.*;
 
 
 
-public class ERPS extends JFrame implements ActionListener {
+class ERPS extends JFrame implements ActionListener {
     private JButton rockButton;
     private JButton paperButton;
     private JButton scissorsButton;
-    private JButton spockButton;
     private JLabel resultLabel;
 
     
 
 
 
-
+    // Game background color
     static Color GBGC;
 
     ERPS(){
-        this.setBackground(GBGC);
+        //this.setBackground(Color.BLACK);
+        getContentPane().setBackground(GBGC);
         this.setFocusable(true);
         Game();
     }
