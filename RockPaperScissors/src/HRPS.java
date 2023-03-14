@@ -5,13 +5,16 @@ import java.awt.event.*;
 
 
 
-class HRPS extends JFrame implements ActionListener {
+public class HRPS extends JFrame implements ActionListener {
     private JButton rockButton;
     private JButton paperButton;
     private JButton scissorsButton;
     private JButton spockButton;
     private JButton lizardButton;
     private JLabel resultLabel;
+    private JButton Yes;
+    private JButton No;
+    Container c = getContentPane();
 
     
 
@@ -21,7 +24,7 @@ class HRPS extends JFrame implements ActionListener {
     static Color GBGC;
 
     HRPS(){
-        this.setBackground(GBGC);
+        getContentPane().setBackground(GBGC);
         this.setFocusable(true);
         Game();
     }
@@ -103,6 +106,7 @@ class HRPS extends JFrame implements ActionListener {
         c.add(spockButton);
         c.add(lizardButton);
         c.add(resultLabel);
+        c.setBackground(GBGC);
 
         // Set the window properties
         setTitle("Rock Paper Scissors");
@@ -156,6 +160,15 @@ class HRPS extends JFrame implements ActionListener {
         } else {
             result = "Computer wins!";
 
+            dispose();
+            new TryAgain();
+            
+
+
+            
+
+
+
 
 
         }
@@ -164,6 +177,12 @@ class HRPS extends JFrame implements ActionListener {
         // update result label
         resultLabel.setText("You chose " + playerChoice + ". Computer chose " + computerChoice + ". " + result);
         
+  
+
+
+        
+
+
     
 
 }
