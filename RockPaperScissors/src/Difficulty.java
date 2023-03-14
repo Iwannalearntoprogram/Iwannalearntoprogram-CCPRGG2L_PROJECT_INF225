@@ -1,8 +1,4 @@
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.xml.stream.events.StartDocument;
+import javax.print.DocFlavor.STRING;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,14 +7,23 @@ import javax.xml.stream.events.StartDocument;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.beans.EventHandler;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.awt.event.ActionEvent;
+import javax.swing.JOptionPane;
+
+
 
 public class Difficulty extends JFrame{
 
+    Timer time;
+    ERPS USERNAME;
+
+        
 
     Difficulty(){
+       
 
-  
 
         JButton easyButton = new JButton();
         easyButton.setText("EASY");
@@ -37,7 +42,7 @@ public class Difficulty extends JFrame{
         this.setLocationRelativeTo(null);
         this.setVisible(true);
         this.setResizable(true);
-       
+        
 
 
         JButton normalButton = new JButton();
@@ -77,15 +82,23 @@ public class Difficulty extends JFrame{
         this.setVisible(true);
         this.setResizable(false);
         this.setLayout(new FlowLayout());
+        
        
-
 
     } private class EventHandler implements ActionListener{
 
         public void actionPerformed(ActionEvent event){
 
-            new ERPS();
+            String title = JOptionPane.showInputDialog("Enter Username:");
+            new ERPS().setTitle(title);
             dispose();
+              
+            
+                       
+
+
+          
+        
 
             
         }
@@ -93,7 +106,8 @@ public class Difficulty extends JFrame{
 
         public void actionPerformed(ActionEvent event){
 
-            new NRPS();
+            String title = JOptionPane.showInputDialog("Enter Username:");
+            new NRPS().setTitle(title);
             dispose();
             
 
@@ -105,8 +119,9 @@ public class Difficulty extends JFrame{
 }private class EventHandler2 implements ActionListener{
 
         public void actionPerformed(ActionEvent event){
+            String title = JOptionPane.showInputDialog("Enter Username:");
 
-            new HRPS();
+            new HRPS().setTitle(title);
 
             dispose();
 
@@ -117,8 +132,6 @@ public class Difficulty extends JFrame{
     }
 
 }
-
-
 
 
 
