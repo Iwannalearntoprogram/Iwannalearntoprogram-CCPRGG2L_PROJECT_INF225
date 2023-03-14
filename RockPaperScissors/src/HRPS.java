@@ -5,7 +5,7 @@ import java.awt.event.*;
 
 
 
-public class HRPS extends JFrame implements ActionListener {
+class HRPS extends JFrame implements ActionListener {
     private JButton rockButton;
     private JButton paperButton;
     private JButton scissorsButton;
