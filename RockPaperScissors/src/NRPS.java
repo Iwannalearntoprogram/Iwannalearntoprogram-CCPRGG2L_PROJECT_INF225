@@ -20,7 +20,7 @@ public class NRPS extends JFrame implements ActionListener {
     static Color GBGC;
 
     NRPS(){
-        this.setBackground(GBGC);
+        getContentPane().setBackground(GBGC);
         this.setFocusable(true);
         Game();
     }
@@ -136,6 +136,8 @@ public class NRPS extends JFrame implements ActionListener {
             result = "You win!";
         } else {
             result = "Computer wins!";
+            dispose();
+            new TryAgain();
 
 
 
