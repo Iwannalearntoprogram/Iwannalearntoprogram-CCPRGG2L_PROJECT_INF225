@@ -47,7 +47,7 @@ class MainMenu extends JFrame{
         this.setSize(800, 800);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
-        this.setResizable(true);
+        this.setResizable(false);
         this.getContentPane().setBackground(Color.cyan);
     }
 
