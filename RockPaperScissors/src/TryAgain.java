@@ -16,6 +16,7 @@ TryAgain(){
 
 
         JLabel defeat = new JLabel("Would you Like to try again?");
+        defeat.setFont(new Font("Arial", Font.BOLD, 18));
 
         JButton tryAgainButton = new JButton("Try Again");
         tryAgainButton.setSize(100,100);
@@ -39,8 +40,9 @@ TryAgain(){
         this.setLocationRelativeTo(null);
         this.setVisible(true);
         this.setResizable(true);
-        this.getContentPane();
-        this.setBackground(Color.red);
+        this.getContentPane().setBackground(Color.RED);;
+        
+        
         
 
 
