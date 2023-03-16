@@ -11,6 +11,8 @@ public class NRPS extends JFrame implements ActionListener {
     private JButton scissorsButton;
     private JButton spockButton;
     private JLabel resultLabel;
+    private JLabel playerScoreD;
+    private int playerScore;
 
     
 
@@ -80,11 +82,19 @@ public class NRPS extends JFrame implements ActionListener {
 
         // Create the result label
         resultLabel = new JLabel();
+        playerScoreD = new JLabel("Score: " + playerScore);
+        playerScoreD.setFont(new Font("Arial", Font.BOLD, 15));
+        playerScoreD.setVerticalTextPosition(JLabel.BOTTOM);
+        playerScoreD.setHorizontalTextPosition(JLabel.RIGHT);
+        playerScoreD.setHorizontalAlignment(JLabel.RIGHT);
+        playerScoreD.setVerticalTextPosition(JLabel.BOTTOM);
+        playerScoreD.setLocation(500,500);
 
        // Add the buttons and result label to the content pane
         Container c = getContentPane();
         c.setLayout(new FlowLayout());
         c.setSize(250, 1500);
+        c.add(playerScoreD);
         c.add(rockButton);
         c.add(paperButton);
         c.add(scissorsButton);
@@ -133,6 +143,9 @@ public class NRPS extends JFrame implements ActionListener {
                 || (playerChoice.equals("scissors") && computerChoice.equals("paper"))
                 || (playerChoice.equals("spock") && computerChoice.equals("scissors"))
                 || (playerChoice.equals("spock") && computerChoice.equals("rock"))) {
+
+                    playerScore++;
+                    playerScoreD.setText("Score: "+ playerScore);
             result = "You win!";
         } else {
             result = "Computer wins!";
@@ -152,5 +165,4 @@ public class NRPS extends JFrame implements ActionListener {
 }
 
 }
-
 
