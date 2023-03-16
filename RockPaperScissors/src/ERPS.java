@@ -1,6 +1,19 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.xml.stream.events.StartDocument;
+import javax.swing.*;
+
+import java.awt.*;
+import java.awt.event.ActionListener;
+
+import java.awt.event.ActionEvent;
 
 
 
@@ -9,24 +22,35 @@ class ERPS extends JFrame implements ActionListener {
     private JButton paperButton;
     private JButton scissorsButton;
     private JLabel resultLabel;
-
+    private JLabel playerScoreD;
+    private int playerScore;
+    
+   
     
 
 
 
     // Game background color
     static Color GBGC;
+  
 
     ERPS(){
+        
         //this.setBackground(Color.BLACK);
         getContentPane().setBackground(GBGC);
-        this.setFocusable(true);
+
         Game();
+        
+        
     }
 
 
 
     public void Game() {
+
+
+
+        
         // Create the buttons and add an action listener to each as well as adding fonts and designs(feel free to reconfigure just remember to tell before you commit)
         rockButton = new JButton("rock");
         rockButton.addActionListener(this);
@@ -68,21 +92,34 @@ class ERPS extends JFrame implements ActionListener {
 
         // Create the result label
         resultLabel = new JLabel();
+        playerScoreD = new JLabel("Score: " + playerScore);
+        playerScoreD.setFont(new Font("Arial", Font.BOLD, 15));
+        playerScoreD.setVerticalTextPosition(JLabel.BOTTOM);
+        playerScoreD.setHorizontalTextPosition(JLabel.RIGHT);
+        playerScoreD.setHorizontalAlignment(JLabel.RIGHT);
+        playerScoreD.setVerticalTextPosition(JLabel.BOTTOM);
+        playerScoreD.setLocation(500,500);
 
        // Add the buttons and result label to the content pane
         Container c = getContentPane();
         c.setLayout(new FlowLayout());
         c.setSize(250, 1500);
+        c.add(playerScoreD);
         c.add(rockButton);
         c.add(paperButton);
         c.add(scissorsButton);
         c.add(resultLabel);
+
+
 
         // Set the window properties
         setTitle("Rock Paper Scissors");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
         setVisible(true);
+
+
+       
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -114,9 +151,13 @@ class ERPS extends JFrame implements ActionListener {
         } else if ((playerChoice.equals("rock") && computerChoice.equals("scissors"))
                 || (playerChoice.equals("paper") && computerChoice.equals("rock"))
                 || (playerChoice.equals("scissors") && computerChoice.equals("paper"))) {
+
+                    playerScore++;
+                    playerScoreD.setText("Score: "+ playerScore);
             result = "You win!";
         } else {
             result = "Computer wins!";
+
 
             dispose();
             new TryAgain();
